@@ -12,11 +12,10 @@ Here is the workflow for submitting a change to the stable branch, and getting i
 
 1. [Fork the repository](https://docs.github.com/en/github/getting-started-with-github/fork-a-repo) into your own GitHub namespace.
 2. [Clone your fork](https://git-scm.com/book/en/v2/Git-Basics-Getting-a-Git-Repository).
-3. In addition to your fork, you need to also add this remote repository. To make things a bit more intuitive, let's rename your fork's remote too (since "origin" is hardly descriptive):
+3. In addition to your fork, you need to also add this remote repository.
 
 ```
-git remote rename origin myfork
-git remote add kenvandine https://github.com/kenvandine/xournalpp.git
+git remote add upstream https://github.com/xournalpp/xournalpp-snap.git
 git fetch --all
 ```
 
@@ -50,21 +49,21 @@ Now that your git metadata has been updated you are ready to create a bugfix bra
 1. All PRs should go to the stable branch so create your branch as a copy of the stable branch:
 
 ```
-git checkout -b my-bugfix-branch kenvandine/stable
+git checkout -b my-bugfix-branch upstream/stable
 ```
 
 2. Make your desired changes and push them to your fork:
 
 ```
-git push myfork my-bugfix-branch
+git push origin my-bugfix-branch
 ```
 
 Once this branch has been pushed to your fork, you should update the local branch tracking so it tracks the branch pushed to your fork:
 
 ```
-git branch -u myfork/my-bugfix-branch
+git branch -u origin/my-bugfix-branch
 ```
 
-3. When you feel they're ready for submitting to the main repository (stable branch), [open up a pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) from your `my-bugfix-branch` to the `kenvandine/stable` branch.
+3. When you feel they're ready for submitting to the main repository (stable branch), [open up a pull request](https://docs.github.com/en/github/collaborating-with-issues-and-pull-requests/about-pull-requests) from your `my-bugfix-branch` to the `upstream/stable` branch.
 4. Once you've opened the PR, it will automatically trigger the build-test action that will launch a build of the snap. You can watch the progress of the snap build from your PR (Show all checks -> Details). Once the snap build has completed, you can find the built snap (to test with) under "Artifacts".
 4. Someone from the team will review the open PR and either merge it or start a discussion with you with additional changes or clarification needed.
