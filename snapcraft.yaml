@@ -3,7 +3,7 @@ adopt-info: xournalpp
 grade: stable
 confinement: strict
 base: core24
-contact: https://github.com/kenvandine/xournalpp/issues
+contact: https://github.com/xournalpp/xournalpp-snap/issues
 issues: https://github.com/xournalpp/xournalpp/issues
 website: https://xournalpp.github.io/
 source-code: https://github.com/xournalpp/xournalpp.git

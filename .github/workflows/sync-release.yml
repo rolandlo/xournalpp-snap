@@ -30,7 +30,7 @@ jobs:
       - name: Commit latest release version
         if: steps.git-check.outputs.modified == 'true'
         run: |
-          git config --global user.name 'Ken VanDine'
-          git config --global user.email 'ken@vandine.org'
+          git config --global user.name 'Roland Lötscher'
+          git config --global user.email 'roland_loetscher@hotmail.com'
           git commit -am "Automatic sync to latest release"
           git push
